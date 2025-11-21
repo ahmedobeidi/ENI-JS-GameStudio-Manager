@@ -35,8 +35,7 @@ t3.assignerEmploye(dev1);
 t4.assignerEmploye(dev1);
 t5.assignerEmploye(dev1);
 
-let tachesInProgress = dev1.trouverTachesParStatut("InProgress");
-dev1.terminerTachesInProgress(tachesInProgress);
+dev1.terminerTachesInProgress();
 
 // t2.assignerEmploye(graphiste1);
 

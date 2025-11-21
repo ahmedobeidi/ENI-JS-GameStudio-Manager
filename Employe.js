@@ -64,13 +64,16 @@ export class Employe {
         return tachesParPriorite;
     }
 
-    terminerTachesInProgress(taches) {
+    terminerTachesInProgress() {
+        let taches = this.trouverTachesParStatut("InProgress");
         taches = this.trierTachesParPriorite(taches);
+
         taches.forEach((tache) => {
             console.log(
                 `${this.#prenom} travaille sur la tàche : ${tache.titre}\n` +
                 `\t - tàche terminée`
             );
+            
             tache.changerStatut("Done");
             tache.afficherTache();
         })
