@@ -68,14 +68,40 @@ export class Employe {
         let taches = this.trouverTachesParStatut("InProgress");
         taches = this.trierTachesParPriorite(taches);
 
+        console.log(`\n-- ${this.#prenom} gère ses tâches IN PROGRESS --`);
+
         taches.forEach((tache) => {
             console.log(
                 `${this.#prenom} travaille sur la tàche : ${tache.titre}\n` +
                 `\t - tàche terminée`
-            );
-            
+            );            
             tache.changerStatut("Done");
             tache.afficherTache();
         })
+
+        console.log();
+    }
+
+    travaillerTachesTodo() {
+        let taches = this.trouverTachesParStatut("Todo");
+        taches = this.trierTachesParPriorite(taches);
+
+        console.log(`-- ${this.#prenom} gère ses tâches TODO --`);
+
+        taches.forEach((tache) => {
+            console.log(
+                `${this.#prenom} travaille sur la tàche : ${tache.titre}\n` +
+                `\t - tâche arrêtée pour aujourd’hui`
+            );
+
+            tache.changerStatut("InProgress");
+            tache.afficherTache();
+        })
+    }
+
+    travailler() {
+        this.terminerTachesInProgress();
+        this.travaillerTachesTodo();
+        console.log(`${this.#prenom} a fini de travailler.`);
     }
 }

@@ -22,10 +22,10 @@ let graphiste1 = new Employe("Claire", "Marie", "marieclaire@enijeu.fr", Employe
 jeu.ajouterEmploye(dev1);
 jeu.ajouterEmploye(graphiste1);
 
-// console.info("\n -- EQUIPE --");
-// jeu.afficherEquipe();
-// console.info("\n -- PROJET --");
-// jeu.afficherProjet();
+console.info(" -- EQUIPE --");
+jeu.afficherEquipe();
+console.info("\n -- PROJET --");
+jeu.afficherProjet();
 
 
 // console.log("\n-- NIVEAU INTERMEDIAIRE --");
@@ -35,10 +35,8 @@ t3.assignerEmploye(dev1);
 t4.assignerEmploye(dev1);
 t5.assignerEmploye(dev1);
 
-dev1.terminerTachesInProgress();
+t2.assignerEmploye(graphiste1);
 
-// t2.assignerEmploye(graphiste1);
-
-// console.info("\n-- AU TRAVAIL --");
-// dev1.travailler();
-// graphiste1.travailler();
+console.info("\n-- AU TRAVAIL --");
+dev1.travailler();
+graphiste1.travailler();
