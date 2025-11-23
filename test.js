@@ -28,17 +28,17 @@ jeu.ajouterEmploye(dev2);
 jeu.ajouterEmploye(graphiste1);
 
 console.info("\n -- EQUIPE --");
-jeu.afficherEquipe();
+// jeu.afficherEquipe();
 console.info("\n -- PROJET --");
 // jeu.afficherProjet();
 
-// // Attribuer les tâches TO DO à un Employe selon son poste
+// Attribuer les tâches TO DO à un Employe selon son poste
 // console.log("-- ATTRIBUER TACHE TODO --");
 // jeu.attribuerTachesTodoNonAttribuees();
 
-// // Attribution manuelle des tâches en IN PROGRESS - elles devraient déjà être chez quelqu'un
-// t4.assignerEmploye(dev2);
-// t5.assignerEmploye(dev2);
+// Attribution manuelle des tâches en IN PROGRESS - elles devraient déjà être chez quelqu'un
+t4.assignerEmploye(dev2);
+t5.assignerEmploye(dev2);
 
 // console.info("\n-- FAIRE TRAVAILLER TOUTE SON EQUIPE --");
 // jeu.equipe.forEach(e => e.travailler());

@@ -1,3 +1,7 @@
+import { Developpeur } from "./Developpeur.js";
+import { Graphiste } from "./Graphiste.js";
+import { TypesDeTaches } from "./TypesTaches.js";
+
 export class JeuVideo {
 
     #titre;
@@ -34,6 +38,44 @@ export class JeuVideo {
 
     ajouterEmploye(employe) {
         this.#employes.push(employe);
+    }
+
+    chercherTachesTodoNonAttribuees() {
+        let taches = this.#taches.filter((tache) => (tache.statut === "Todo" && !tache.employe));
+        return taches;
+    }
+
+    chercherEmployePourTypeTache(typeTache) {
+        let typeInstanceOf;
+        let employe;
+
+        // Convertir les valeurs d'objet en tableaux
+        let developpeurTypesTaches = Object.values(TypesDeTaches.DEVELOPPEUR);
+        let graphisteTypesTaches = Object.values(TypesDeTaches.GRAPHISTE);
+
+        developpeurTypesTaches.forEach((type) => {
+            if (type === typeTache) typeInstanceOf = "Developpeur";
+        });
+
+        graphisteTypesTaches.forEach((type) => {
+            if (type === typeTache) typeInstanceOf = "Graphiste";
+        });
+
+        for (let e of this.#employes) {
+            if (e instanceof Developpeur && typeInstanceOf === "Developpeur") {
+                employe = e;
+                break;
+            }
+            else if (e instanceof Graphiste && typeInstanceOf == "Graphiste") {
+                employe = e
+                break;
+            };
+        }
+
+        console.log(employe.nom);
+        
+
+        return employe;
     }
 
     afficherEquipe() {
