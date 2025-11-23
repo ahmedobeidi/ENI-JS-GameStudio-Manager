@@ -1,6 +1,6 @@
 export class Employe {
 
-    static Niveaux = { JUNIOR: "Junior", SENIOR: "Senior" };
+    static Niveaux = { JUNIOR: "Junior", SENIOR: "Senior", EXPERT: "Expert"};
 
     #nom;
     #prenom;
@@ -74,7 +74,7 @@ export class Employe {
             console.log(
                 `${this.#prenom} travaille sur la tàche : ${tache.titre}\n` +
                 `\t - tàche terminée`
-            );            
+            );
             tache.changerStatut("Done");
             tache.afficherTache();
         })
@@ -103,5 +103,11 @@ export class Employe {
         this.terminerTachesInProgress();
         this.travaillerTachesTodo();
         console.log(`${this.#prenom} a fini de travailler.`);
+    }
+
+    afficherDetail() {
+        console.log(
+            ` ${this.#prenom} ${this.#nom} (email : ${this.#email}, niveau : ${this.#niveau})`
+        );
     }
 }

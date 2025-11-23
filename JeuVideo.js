@@ -39,9 +39,7 @@ export class JeuVideo {
     afficherEquipe() {
         console.info(`Équipe du projet ${this.#titre}`);
         this.#employes.forEach((employe) => {
-            console.log(
-                ` ${employe.prenom} ${employe.nom} (email : ${employe.email}, niveau : ${employe.niveau})`
-            );
+            employe.afficherDetail();
         });
     }
 
