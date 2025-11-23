@@ -102,7 +102,7 @@ export class Employe {
     travailler() {
         this.terminerTachesInProgress();
         this.travaillerTachesTodo();
-        console.log(`${this.#prenom} a fini de travailler.`);
+        console.log(`${this.#prenom} a fini de travailler.\n`);
     }
 
     afficherDetail() {

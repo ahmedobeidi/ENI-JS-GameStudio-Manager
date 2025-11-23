@@ -20,6 +20,10 @@ export class JeuVideo {
         this.#employes = [];
     }
 
+    get equipe() {
+        return this.#employes;
+    }
+
     formatDate(date) {
         const options = {
             weekday: 'long',
@@ -70,12 +74,19 @@ export class JeuVideo {
                 employe = e
                 break;
             };
-        }
-
-        console.log(employe.nom);
-        
+        }        
 
         return employe;
+    }
+
+    attribuerTachesTodoNonAttribuees() {
+        const tachesNonAttribuess = this.chercherTachesTodoNonAttribuees();
+
+        tachesNonAttribuess.forEach((tache) => {
+            let type = tache.type;
+            let employe = this.chercherEmployePourTypeTache(type);
+            tache.assignerEmploye(employe);
+        });
     }
 
     afficherEquipe() {

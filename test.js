@@ -28,20 +28,20 @@ jeu.ajouterEmploye(dev2);
 jeu.ajouterEmploye(graphiste1);
 
 console.info("\n -- EQUIPE --");
-// jeu.afficherEquipe();
+jeu.afficherEquipe();
 console.info("\n -- PROJET --");
-// jeu.afficherProjet();
+jeu.afficherProjet();
 
 // Attribuer les tâches TO DO à un Employe selon son poste
-// console.log("-- ATTRIBUER TACHE TODO --");
-// jeu.attribuerTachesTodoNonAttribuees();
+console.log("-- ATTRIBUER TACHE TODO --");
+jeu.attribuerTachesTodoNonAttribuees();
 
 // Attribution manuelle des tâches en IN PROGRESS - elles devraient déjà être chez quelqu'un
 t4.assignerEmploye(dev2);
 t5.assignerEmploye(dev2);
 
-// console.info("\n-- FAIRE TRAVAILLER TOUTE SON EQUIPE --");
-// jeu.equipe.forEach(e => e.travailler());
+console.info("\n-- FAIRE TRAVAILLER TOUTE SON EQUIPE --");
+jeu.equipe.forEach(e => e.travailler());
 
-// console.log("-- ETAT DU PROJET EN FIN DE JOURNEE --");
-// jeu.afficherProjet();
+console.log("-- ETAT DU PROJET EN FIN DE JOURNEE --");
+jeu.afficherProjet();
